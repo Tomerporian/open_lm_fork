@@ -42,7 +42,7 @@ for i in `ls -t /p/home/jusers/porian1/juwels/porian1/open_lm_fork/exps/lm_grid_
             if [ "$AVG" == "none" ]; then
                 echo "$AVG"
                 torchrun -m --nnodes 1 --nproc_per_node 4 open_lm.main \
-                    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
+                    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
                     --workers 2 \
                     --precision amp_bfloat16 \
                     --dataset-resampled \
@@ -62,7 +62,7 @@ for i in `ls -t /p/home/jusers/porian1/juwels/porian1/open_lm_fork/exps/lm_grid_
             else
                 echo "$AVG"
                 torchrun -m --nnodes 1 --nproc_per_node 4 open_lm.main \
-                    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
+                    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
                     --workers 2 \
                     --precision amp_bfloat16 \
                     --dataset-resampled \

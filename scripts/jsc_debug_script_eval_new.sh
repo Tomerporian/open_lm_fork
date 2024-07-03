@@ -61,7 +61,7 @@ EXP_NAME="1p5T-bigdata-neox-$MODEL-$BATCHSIZE-$LR-$WD-nodes16-bs$BATCHSIZE-v1"
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar" \
     --dataset-resampled \
     --precision amp_bfloat16 \
     --batch-size $BATCHSIZE \
@@ -86,7 +86,7 @@ srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_00000000.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_00000000.tar" \
     --train-data-mix-weights 0.725 0.275 \
     --dataset-resampled \
     --precision amp_bfloat16 \
@@ -114,7 +114,7 @@ srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_00000000.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_00000000.tar" \
     --train-data-mix-weights 0.725 0.275 \
     --dataset-resampled \
     --precision amp_bfloat16 \
@@ -150,7 +150,7 @@ EXP_NAME="1p5T-bigdata-neox-$MODEL-$BATCHSIZE-$LR-$WD-nodes16-bs$BATCHSIZE-v0"
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_00000000.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_00000000.tar" \
     --train-data-mix-weights 0.725 0.275 \
     --dataset-resampled \
     --precision amp_bfloat16 \
@@ -180,7 +180,7 @@ srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_00000000.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_00000000.tar" \
     --train-data-mix-weights 0.725 0.275 \
     --dataset-resampled \
     --precision amp_bfloat16 \
@@ -209,7 +209,7 @@ srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main \
     --train-num-samples 400000000 \
     --workers 2 \
-    --val-data "/p/fastdata/mmlaion/lmdata/rpj/shard_00000000.tar" \
+    --val-data "/p/data1/mmlaion/lmdata/rpj/shard_00000000.tar" \
     --train-data-mix-weights 0.725 0.275 \
     --dataset-resampled \
     --precision amp_bfloat16 \

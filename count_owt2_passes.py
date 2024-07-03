@@ -3,7 +3,7 @@ from open_lm.file_utils import pt_load
 import pandas as pd
 import ast
 
-num_tar_files = sum(1 for f in os.listdir('/p/fastdata/mmlaion/lmdata_2/openwebtext2_tokenized') if f.endswith('.tar'))
+num_tar_files = sum(1 for f in os.listdir('/p/data1/mmlaion/lmdata_2/openwebtext2_tokenized') if f.endswith('.tar'))
 
 
 

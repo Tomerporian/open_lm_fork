@@ -8,6 +8,7 @@ def clean_exp(dir):
             if os.path.exists(os.path.join(dir, subdir, 'checkpoints')):
                 os.system('rm -r ' + os.path.join(dir, subdir, 'checkpoints'))
                 # print('rm -r ' + os.path.join(dir, subdir, 'checkpoints'))
+                # print(dir)
 
 def check_nccl(dir):
     # for all subdirectories in dir
@@ -33,16 +34,14 @@ def check_nccl(dir):
 
 def main():
     dir_name = 'exps_final_runs'
-    datas_to_keep = ['24-05-09', '24-05-10', '24-05-11', '24-05-12', '24-05-13']
-    dirs_to_clean = []
-    for dir in os.listdir(dir_name):
-        # use regex to get date
-        dir_date = re.search(r'\d{2}-\d{2}-\d{2}', dir).group()
-        if dir_date not in datas_to_keep:
-            dirs_to_clean.append(dir)
+    dirs_to_keep = ['24-05-11-kaplan_1_nodes_big_BS', '24-05-11-kaplan_2_nodes_big_BS', '24-05-11-kaplan_4_nodes_big_BS', '24-05-10-kaplan_8_nodes_orig_fix', '24-05-14-CC_1_nodes_rw_BS_256_rerun', '24-05-14-CC_2_nodes_rw_BS_256_rerun', '24-05-14-CC_4_nodes_rw_BS_256_rerun', '24-05-14-CC_8_nodes_rw_BS_256_rerun', '24-05-09-const_1_nodes_tuned', '24-05-09-const_2_nodes_tuned', '24-05-09-const_4_nodes_tuned', '24-05-09-const_8_nodes_tuned', '24-05-12-kaplan_1_nodes_big_BS_openwebtext2', '24-05-12-kaplan_2_nodes_big_BS_openwebtext2', '24-05-12-kaplan_4_nodes_big_BS_openwebtext2', '24-05-11-kaplan_8_nodes_openwebtext2', '24-05-14-CC_1_nodes_owt2_BS_256_rerun', '24-05-14-CC_2_nodes_owt2_BS_256_rerun', '24-05-14-CC_4_nodes_owt2_BS_256_rerun', '24-05-14-CC_8_nodes_owt2_BS_256_rerun', '24-05-11-const_1_nodes_tuned_openwebtext2', '24-05-11-const_2_nodes_tuned_openwebtext2', '24-05-11-const_4_nodes_tuned_openwebtext2', '24-05-11-const_8_nodes_tuned_openwebtext2', '24-04-28-final_sweep_const', '24-04-29-final_sweep_const_extra_1', '24-04-29-final_sweep_const_extra_2', '24-05-01-final_sweep_const_extra_3', '24-05-02-final_sweep_const_extra_4', '24-05-03-final_sweep_const_beta2', '24-05-03-final_sweep_const_beta2_220M', '24-05-05-final_sweep_const_extra_5', '24-05-17-seed_variance_rerun', '24-05-20-seed_variance_owt']
 
-    for dir in dirs_to_clean:
-        clean_exp(os.path.join(dir_name, dir))
+    for dir in sorted(os.listdir(dir_name)):
+        if dir in dirs_to_keep:
+            continue
+        else:
+            clean_exp(os.path.join(dir_name, dir))
+            # print(dir)
     # dirs_to_check = [dir for dir in os.listdir('exps_final_runs')]
     # for dir in dirs_to_check:
     #     check_nccl(os.path.join('exps_final_runs', dir))

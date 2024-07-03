@@ -40,11 +40,11 @@ def eval_ckpt(args, ckpt_path):
     checkpoint_path_name = Path(args.resume).name
     args.train_data = None
     if args.data_key == "json.gz":
-        args.val_data = ["/p/fastdata/mmlaion/lmdata_2/refined_web_tokenized/{00000011..00000020}.tar"]# ~141M tokens
+        args.val_data = ["/p/data1/mmlaion/lmdata_2/refined_web_tokenized/{00000011..00000020}.tar"]# ~141M tokens
         if "openwebtext2" in args.dataset_manifest:
-            args.val_data = ["/p/fastdata/mmlaion/lmdata_2/openwebtext2_tokenized/{0000014..00000026}.tar"]
+            args.val_data = ["/p/data1/mmlaion/lmdata_2/openwebtext2_tokenized/{0000014..00000026}.tar"]
     elif args.data_key == "json":
-        args.val_data = ["/p/fastdata/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar"]
+        args.val_data = ["/p/data1/mmlaion/lmdata/rpj/shard_{00000000..00000003}.tar"]
     args.ignore_parse_errors = False
     args.dataset_manifest = None
     args.batch_size = 16

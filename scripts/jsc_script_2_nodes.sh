@@ -1,18 +1,13 @@
 #!/bin/bash -x
 
-#SBATCH --account=transfernetx
+#SBATCH --account=cstdl
 #SBATCH --nodes=2
-#SBATCH --exclude=jwb[0026,0098,0193,0631,0731,0729,0801,0807,0833,0964,1021]
 #SBATCH --gres=gpu:4
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=12
-# #SBATCH --wait-all-nodes=1
 #SBATCH --time=06:00:00
-#SBATCH --partition=booster
-#SBATCH --job-name=openlm
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --mail-type=FAIL
-#SBATCH --mail-user=tomerporian@mail.tau.ac.il
+#SBATCH --partition=dc-gpu
+
 
 
 # load low-level libraries
@@ -51,7 +46,7 @@ export PYTHONPATH="$PYTHONPATH:${OPEN_CLIP_HOME}"
 
 cd ${OPEN_CLIP_HOME}
 
-LOGS="/p/scratch/ccstdl/porian1/$3"
+LOGS="/p/data1/mmlaion/porian1/$3"
 
 WANDB_MODE=offline
 srun --cpu_bind=v --accel-bind=gn --threads-per-core=1 python -u -m open_lm.main --name "$2" --logs $LOGS --config $1 

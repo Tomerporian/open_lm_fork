@@ -2,8 +2,8 @@ import json
 import os
 import pandas as pd
 
-# manifest_path = "/p/fastdata/mmlaion/lmdata_2/openwebtext2_tokenized/manifest_train.jsonl"
-# base_path = "/p/fastdata/mmlaion/lmdata_2/openwebtext2_tokenized/"
+# manifest_path = "/p/data1/mmlaion/lmdata_2/openwebtext2_tokenized/manifest_train.jsonl"
+# base_path = "/p/data1/mmlaion/lmdata_2/openwebtext2_tokenized/"
 
 # def get_file_size(file_path: str) -> int:
 #     return os.path.getsize(file_path)
