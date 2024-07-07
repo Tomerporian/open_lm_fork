@@ -33,7 +33,7 @@ def generate_model_jsonl(params):
                     }
 
     width, depth = params_dict[params]
-    filepath = f"layers={depth}_hidden-dim={width}.json"
+    filepath = f"layers={depth}_hidden-dim={width}.jsonl"
     data = {
         "hidden_dim": width,
         "n_layers": depth,
@@ -90,7 +90,6 @@ def main():
     )
 
     metrics = evaluate_loop(open_lm, data["val_list"], 0, model_args, None)
-    os.remove(model_args.model)
     print(metrics)
 
 
